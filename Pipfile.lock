@@ -1,0 +1,24 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "80cc0d1f1c417af92fed4ae9cad87c85e78dcc371847b72bd22914532ffa3396"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.7"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "lazy-myles": {
+            "path": "."
+        }
+    },
+    "develop": {}
+}

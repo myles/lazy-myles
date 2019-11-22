@@ -13,7 +13,7 @@ from setuptools import find_packages, setup, Command
 
 # Package meta-data.
 NAME = 'lazy-myles'
-DESCRIPTION = "Myles is super lazy and is tired of havivng to repeate so much code."
+DESCRIPTION = "Myles is super lazy and is tired of having to repeat so much code."
 URL = 'https://github.com/myles/lazy-myles'
 EMAIL = 'me@mylesbraithwaite.org'
 AUTHOR = 'Myles Braithwaite'
