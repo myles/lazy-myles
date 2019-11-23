@@ -1,3 +1,5 @@
+![Lazy Myles](designs/lazy-myles-github-card.png)
+
 # Lazy Myles
 
 **Lazy Myles** is a Python package of functions [Myles](https://mylesb.ca/) is
