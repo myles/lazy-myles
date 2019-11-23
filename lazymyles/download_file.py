@@ -10,7 +10,7 @@ import requests
 from . import regexs
 
 
-def get_file_name_from_content_disposition(content_disposition: str):
+def get_file_name_from_content_disposition(content_disposition: str) -> Union[str, None]:
     """
     Get file name from the Content-Disposition HTTP header.
 
@@ -35,7 +35,7 @@ def get_file_name_from_content_disposition(content_disposition: str):
     return file_name[0]
 
 
-def get_file_name_from_url(url: str):
+def get_file_name_from_url(url: str) -> str:
     """
     Get the file name from the URL.
 
@@ -52,7 +52,7 @@ def get_file_name_from_url(url: str):
 
 def download_file(
     url: str, output_path: Union[Path, str], file_name: str = None
-):
+) -> Path:
     """
     Download a file.
 

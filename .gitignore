@@ -91,3 +91,6 @@ ENV/
 .ropeproject
 *.npy
 *.pkl
+
+# mypy
+.mypy_cache/

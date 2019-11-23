@@ -10,6 +10,7 @@ twine = "*"
 pytest = "*"
 isort = "*"
 responses = "*"
+mypy = "*"
 
 [packages]
 lazy-myles = {path = "."}
