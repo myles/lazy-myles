@@ -13,6 +13,7 @@ from . import fixtures
         # TODO These two are valid HTML but a little difficult to implement.
         # (fixtures.HTML_FIXTURE_TWO, fixtures.HTML_FIXTURE_TWO_OUTPUT),
         # (fixtures.HTML_FIXTURE_THREE, fixtures.HTML_FIXTURE_THREE_OUTPUT),
+        (fixtures.HTML_FIXTURE_FOUR, fixtures.HTML_FIXTURE_FOUR_OUTPUT),
     ),
 )
 def test_dl_to_dict(html, expected):

@@ -78,3 +78,29 @@ HTML_FIXTURE_THREE_OUTPUT = {
         ),
     ]
 }
+
+HTML_FIXTURE_FOUR = """<dl>
+    <div>
+        <dt>Name</dt>
+        <dd>Godzilla</dd>
+    </div>
+    <div>
+        <dt>Born</dt>
+        <dd>1952</dd>
+    </div>
+    <div>
+        <dt>Birthplace</dt>
+        <dd>Japan</dd>
+    </div>
+    <div>
+        <dt>Color</dt>
+        <dd>Green</dd>
+    </div>
+</dl>"""
+
+HTML_FIXTURE_FOUR_OUTPUT = {
+    "Name": "Godzilla",
+    "Born": "1952",
+    "Birthplace": "Japan",
+    "Color": "Green"
+}
