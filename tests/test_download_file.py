@@ -28,7 +28,9 @@ def test_download_file(monkeypatch):
     )
 
     path = Path(__file__).resolve().parent / "temp"
-    path.mkdir()
+
+    if not path.exists():
+        path.mkdir()
 
     file_path = download_file("https://example.com/test.csv", output_path=path)
 
