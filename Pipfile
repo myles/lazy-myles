@@ -8,6 +8,8 @@ black = "*"
 flake8 = "*"
 twine = "*"
 pytest = "*"
+isort = "*"
+responses = "*"
 
 [packages]
 lazy-myles = {path = "."}
@@ -17,4 +19,3 @@ tests = "pytest"
 
 [requires]
 python_version = "3.7"
-
