@@ -1,3 +1,4 @@
+import fnmatch
 import re
 from os.path import basename
 from pathlib import Path
@@ -6,12 +7,13 @@ from urllib.parse import urlparse
 
 import requests
 
-REGEX_CONTENT_DISPOSITION = re.compile(r"filename=(.+)")
+REGEX_CONTENT_DISPOSITION = re.compile(r"filename=[\"|\']?(?P<file_name>.*)[\"|\']$")
+REGEX_CONTENT_DISPOSITION_WITHOUT_QUOTES = re.compile(r"filename=(.*)")
 
 
 def get_file_name_from_content_disposition(content_disposition: str):
     """
-    Get file name from the CONTENT_DISPOSITION HTTP header.
+    Get file name from the Content-Disposition HTTP header.
 
     Parameters
     ----------
@@ -22,6 +24,9 @@ def get_file_name_from_content_disposition(content_disposition: str):
     str
     """
     file_name = REGEX_CONTENT_DISPOSITION.findall(content_disposition, 0)
+
+    if not file_name:
+        file_name = REGEX_CONTENT_DISPOSITION_WITHOUT_QUOTES.findall(content_disposition, 0)
 
     if not file_name:
         return None
@@ -70,9 +75,9 @@ def download_file(
 
     response.raise_for_status()
 
-    if file_name is None and response.headers.get("CONTENT_DISPOSITION"):
+    if file_name is None and response.headers.get("Content-Disposition"):
         file_name = get_file_name_from_content_disposition(
-            response.headers["CONTENT_DISPOSITION"]
+            response.headers["Content-Disposition"]
         )
 
     if file_name is None:

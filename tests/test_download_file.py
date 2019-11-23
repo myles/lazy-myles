@@ -12,7 +12,12 @@ from lazymyles.download_file import (
 
 @pytest.mark.parametrize(
     "content_disposition,expected",
-    (("filename=test.csv", "test.csv"), ("None", None),),
+    (
+        ("filename=test.csv", "test.csv"),
+        ('attachment; filename="filename.jpg"', "filename.jpg"),
+        ('form-data; name="fieldName"; filename="filename.jpg"', "filename.jpg"),
+        ("attachment", None),
+    ),
 )
 def test_get_file_name_from_content_disposition(content_disposition, expected):
     output = get_file_name_from_content_disposition(content_disposition)
