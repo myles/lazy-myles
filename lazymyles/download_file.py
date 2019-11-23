@@ -10,7 +10,9 @@ import requests
 from . import regexs
 
 
-def get_file_name_from_content_disposition(content_disposition: str) -> Union[str, None]:
+def get_file_name_from_content_disposition(
+    content_disposition: str,
+) -> Union[str, None]:
     """
     Get file name from the Content-Disposition HTTP header.
 

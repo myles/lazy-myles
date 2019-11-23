@@ -19,10 +19,10 @@ HTML_FIXTURE_ONE_OUTPUT = {
     "ID number": "CH465517080",
     "Status": "Conscious",
     "Park": "Westworld",
-    "Narrative Role": "Rancher's daughter"
+    "Narrative Role": "Rancher's daughter",
 }
 
-HTML_FIXTURE_TWO = '''<dl>
+HTML_FIXTURE_TWO = """<dl>
     <dt>Firefox</dt>
     <dt>Mozilla Firefox</dt>
     <dt>Fx</dt>
@@ -32,7 +32,7 @@ HTML_FIXTURE_TWO = '''<dl>
         Mozilla Corporation and hundreds of
         volunteers.
     </dd>
-</dl>'''
+</dl>"""
 
 HTML_FIXTURE_TWO_OUTPUT = {
     "Firefox": (
@@ -75,6 +75,6 @@ HTML_FIXTURE_THREE_OUTPUT = {
             "The Red Panda also known as the Lesser Panda, Wah, Bear Cat or "
             "Firefox, is a mostly herbivorous mammal, slightly larger than a "
             "domestic cat (60 cm long)."
-        )
+        ),
     ]
 }
