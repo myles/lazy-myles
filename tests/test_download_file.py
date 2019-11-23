@@ -3,18 +3,31 @@ from pathlib import Path
 import pytest
 import responses
 
-from lazymyles.download_file import download_file, get_file_name
+from lazymyles.download_file import (
+    download_file,
+    get_file_name_from_content_disposition,
+    get_file_name_from_url,
+)
 
 
 @pytest.mark.parametrize(
-    "url,expected_file_name",
+    "content_disposition,expected",
+    (("filename=test.csv", "test.csv"), ("None", None),),
+)
+def test_get_file_name_from_content_disposition(content_disposition, expected):
+    output = get_file_name_from_content_disposition(content_disposition)
+    assert output == expected
+
+
+@pytest.mark.parametrize(
+    "url,expected",
     (
         ("https://example.com/test.csv", "test.csv"),
         ("https://example.com/test.csv?arg=1", "test.csv"),
     ),
 )
-def test_get_file_name(url, expected_file_name):
-    assert get_file_name(url) == expected_file_name
+def test_get_file_name_from_url(url, expected):
+    assert get_file_name_from_url(url) == expected
 
 
 @responses.activate
