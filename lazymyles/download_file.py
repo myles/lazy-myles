@@ -7,8 +7,7 @@ from urllib.parse import urlparse
 
 import requests
 
-REGEX_CONTENT_DISPOSITION = re.compile(r"filename=[\"|\']?(?P<file_name>.*)[\"|\']$")
-REGEX_CONTENT_DISPOSITION_WITHOUT_QUOTES = re.compile(r"filename=(.*)")
+from . import regexs
 
 
 def get_file_name_from_content_disposition(content_disposition: str):
@@ -23,10 +22,12 @@ def get_file_name_from_content_disposition(content_disposition: str):
     -------
     str
     """
-    file_name = REGEX_CONTENT_DISPOSITION.findall(content_disposition, 0)
+    file_name = regexs.REGEX_CONTENT_DISPOSITION.findall(content_disposition, 0)
 
     if not file_name:
-        file_name = REGEX_CONTENT_DISPOSITION_WITHOUT_QUOTES.findall(content_disposition, 0)
+        file_name = regexs.REGEX_CONTENT_DISPOSITION_WITHOUT_QUOTES.findall(
+            content_disposition, 0
+        )
 
     if not file_name:
         return None

@@ -15,7 +15,10 @@ from lazymyles.download_file import (
     (
         ("filename=test.csv", "test.csv"),
         ('attachment; filename="filename.jpg"', "filename.jpg"),
-        ('form-data; name="fieldName"; filename="filename.jpg"', "filename.jpg"),
+        (
+            'form-data; name="fieldName"; filename="filename.jpg"',
+            "filename.jpg",
+        ),
         ("attachment", None),
     ),
 )
