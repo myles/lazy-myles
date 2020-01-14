@@ -20,7 +20,7 @@ URL = "https://github.com/myles/lazy-myles"
 EMAIL = "me@mylesbraithwaite.org"
 AUTHOR = "Myles Braithwaite"
 REQUIRES_PYTHON = ">=3.6.0"
-VERSION = "0.1.0"
+VERSION = "1.0.0"
 
 # What packages are required for this module to be executed?
 REQUIRED = [
@@ -131,5 +131,5 @@ setup(
         "Programming Language :: Python :: Implementation :: PyPy",
     ],
     # $ setup.py publish support.
-    cmdclass={"upload": UploadCommand,},
+    cmdclass={"upload": UploadCommand},
 )
