@@ -11,12 +11,13 @@ pytest = "*"
 isort = "*"
 responses = "*"
 mypy = "*"
+pytest-cov = "*"
 
 [packages]
 lazy-myles = {path = "."}
 
 [scripts]
-tests = "pytest"
+tests = "pytest --cov"
 
 [requires]
 python_version = "3.7"
