@@ -30,6 +30,11 @@ jobs:
         pipenv run flake8 ./lazymyles/ ./tests/ setup.py --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
         pipenv run black --check ./lazymyles/ ./tests/ setup.py
 
+    - name: Typing check with mypy
+      run: |
+        python -m pip install --upgrade mypy
+        mypy ./lazymyles/
+
     - name: Test with pytest
       run: |
         pipenv run tests
