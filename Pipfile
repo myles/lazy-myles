@@ -12,6 +12,7 @@ isort = "*"
 responses = "*"
 mypy = "*"
 pytest-cov = "*"
+bumpversion = "0.5.3"
 
 [packages]
 lazy-myles = {path = "."}
