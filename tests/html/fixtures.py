@@ -102,5 +102,5 @@ HTML_FIXTURE_FOUR_OUTPUT = {
     "Name": "Godzilla",
     "Born": "1952",
     "Birthplace": "Japan",
-    "Color": "Green"
+    "Color": "Green",
 }
