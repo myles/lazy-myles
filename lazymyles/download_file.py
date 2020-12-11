@@ -22,10 +22,10 @@ def get_file_name_from_content_disposition(
     -------
     str
     """
-    file_name = regexs.REGEX_CONTENT_DISPOSITION.findall(content_disposition, 0)
+    file_name = regexs.CONTENT_DISPOSITION_REGEX.findall(content_disposition, 0)
 
     if not file_name:
-        file_name = regexs.REGEX_CONTENT_DISPOSITION_WITHOUT_QUOTES.findall(
+        file_name = regexs.CONTENT_DISPOSITION_WITHOUT_QUOTES_REGEX.findall(
             content_disposition, 0
         )
 

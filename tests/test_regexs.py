@@ -11,12 +11,12 @@ def test_email_regex(email):
 
 
 @pytest.mark.parametrize(
-    "url",
+    "http_url",
     (
         "https://mylesbraithwaite.org/",
         "http://mylesbraithwaite.org/",
         "http://www.mylesbraithwaite.org/",
     ),
 )
-def test_url_regex(url):
-    assert regexs.URL_REGEX.match(url)
+def test_http_url_regex(http_url):
+    assert regexs.HTTP_URL_REGEX.match(http_url)
