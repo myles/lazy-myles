@@ -9,11 +9,22 @@ from . import fixtures
 @pytest.mark.parametrize(
     "html,expected",
     (
-        (fixtures.HTML_FIXTURE_ONE, fixtures.HTML_FIXTURE_ONE_OUTPUT),
-        # TODO These two are valid HTML but a little difficult to implement.
-        # (fixtures.HTML_FIXTURE_TWO, fixtures.HTML_FIXTURE_TWO_OUTPUT),
-        # (fixtures.HTML_FIXTURE_THREE, fixtures.HTML_FIXTURE_THREE_OUTPUT),
-        (fixtures.HTML_FIXTURE_FOUR, fixtures.HTML_FIXTURE_FOUR_OUTPUT),
+        pytest.param(fixtures.HTML_FIXTURE_ONE, fixtures.HTML_FIXTURE_ONE_OUTPUT),
+        pytest.param(
+            fixtures.HTML_FIXTURE_TWO,
+            fixtures.HTML_FIXTURE_TWO_OUTPUT,
+            marks=pytest.mark.xfail(
+                reason="TODO ENG-2: The second fixture is vaild HTML but it's a little difficult to implement."
+            ),
+        ),
+        pytest.param(
+            fixtures.HTML_FIXTURE_THREE,
+            fixtures.HTML_FIXTURE_THREE_OUTPUT,
+            marks=pytest.mark.xfail(
+                reason="TODO ENG-2: The third fixture is vaild HTML but it's a little difficult to implement."
+            )
+        ),
+        pytest.param(fixtures.HTML_FIXTURE_FOUR, fixtures.HTML_FIXTURE_FOUR_OUTPUT),
     ),
 )
 def test_dl_to_dict(html, expected):
