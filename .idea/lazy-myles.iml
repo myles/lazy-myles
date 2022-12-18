@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/lazymyles" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/tests/temp" />
     </content>
-    <orderEntry type="jdk" jdkName="Pipenv (lazy-myles)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Poetry (lazy-myles)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="R User Library" level="project" />
     <orderEntry type="library" name="R Skeletons" level="application" />
@@ -14,10 +14,10 @@
     <option name="requirementsPath" value="$MODULE_DIR$/Pipfile" />
   </component>
   <component name="PyDocumentationSettings">
+    <option name="format" value="NUMPY" />
     <option name="myDocStringFormat" value="NumPy" />
   </component>
   <component name="TestRunnerService">
-    <option name="projectConfiguration" value="pytest" />
     <option name="PROJECT_TEST_RUNNER" value="pytest" />
   </component>
 </module>
