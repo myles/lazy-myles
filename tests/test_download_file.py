@@ -55,4 +55,4 @@ def test_download_file(monkeypatch):
 
     file_path = download_file("https://example.com/test.csv", output_path=path)
 
-    assert file_path.exists()
+    assert file_path.exists() is True
