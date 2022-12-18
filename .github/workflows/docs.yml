@@ -33,7 +33,7 @@ jobs:
         target_path: ./docs/_build/html/
 
     - name: Push changes
-      uses: ad-m/github-push-action@v.0.6.0
+      uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
