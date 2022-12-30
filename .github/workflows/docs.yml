@@ -1,0 +1,91 @@
+name: Build and deploy Python documentation
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Build job
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.9]
+
+    steps:
+      steps:
+        - id: checkout
+          name: Checkout 🛎
+          uses: actions/checkout@v2
+
+        - id: setup-python
+          name: Setup Python ${{ matrix.python-version }} 🏗
+          uses: actions/setup-python@v1
+          with:
+            python-version: ${{ matrix.python-version }}
+
+        - id: setup-poetry
+          name: Setup Poetry 📝
+          run: |
+            curl -sSL https://install.python-poetry.org | python3 -
+
+        - id: get-cache-poetry-directory
+          name: Get poetry's cache directory 🔎
+          run: |
+            echo "::set-output name=dir::$(poetry config cache-dir)"
+
+        - id: cache-poetry-directory
+          name: Cache poetry 📦
+          uses: actions/cache@v3.0.11
+          with:
+            path: ${{ steps.get-cache-poetry-directory.outputs.dir }}
+            key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
+            restore-keys: ${{ runner.os }}-poetry-
+
+        - id: install-dependencies
+          name: Install dependencies 👨🏻‍💻
+          run: |
+            poetry install
+
+        - id: build-documentation
+          name: Build documentation
+          run: |
+            poetry run sphinx-build ./docs ./docs/_build
+
+        - id: upload-documentation
+          name: Upload artifact
+          uses: actions/upload-pages-artifact@v1
+          with:
+            path: ./docs/_build
+
+  # Deployment job
+  deploy:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - id: deployment
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
