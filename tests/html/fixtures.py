@@ -1,4 +1,5 @@
-HTML_FIXTURE_ONE = """<dl>
+HTML_FIXTURE_ONE = """<!DOCTYPE html>
+<dl>
     <dt>First name</dt>
     <dd>Dolores</dd>
     <dt>Last name</dt>
@@ -22,7 +23,8 @@ HTML_FIXTURE_ONE_OUTPUT = {
     "Narrative Role": "Rancher's daughter",
 }
 
-HTML_FIXTURE_TWO = """<dl>
+HTML_FIXTURE_TWO = """<!DOCTYPE html>
+<dl>
     <dt>Firefox</dt>
     <dt>Mozilla Firefox</dt>
     <dt>Fx</dt>
@@ -49,7 +51,8 @@ HTML_FIXTURE_TWO_OUTPUT = {
     ),
 }
 
-HTML_FIXTURE_THREE = """<dl>
+HTML_FIXTURE_THREE = """<!DOCTYPE html>
+<dl>
     <dt>Firefox</dt>
     <dd>
         A free, open source, cross-platform,
@@ -79,7 +82,8 @@ HTML_FIXTURE_THREE_OUTPUT = {
     ]
 }
 
-HTML_FIXTURE_FOUR = """<dl>
+HTML_FIXTURE_FOUR = """<!DOCTYPE html>
+<dl>
     <div>
         <dt>Name</dt>
         <dd>Godzilla</dd>
