@@ -1,4 +1,4 @@
-name: Build and deploy Python documentation
+name: Docs
 
 on:
   # Runs on pushes targeting the default branch
