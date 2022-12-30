@@ -22,7 +22,7 @@ from . import fixtures
             fixtures.HTML_FIXTURE_THREE_OUTPUT,
             marks=pytest.mark.xfail(
                 reason="TODO ENG-2: The third fixture is vaild HTML but it's a little difficult to implement."
-            )
+            ),
         ),
         pytest.param(fixtures.HTML_FIXTURE_FOUR, fixtures.HTML_FIXTURE_FOUR_OUTPUT),
     ),

@@ -1,6 +1,6 @@
 from os.path import basename
 from pathlib import Path
-from typing import Union
+from typing import Optional, Union
 from urllib.parse import urlparse
 
 import requests
@@ -51,7 +51,7 @@ def get_file_name_from_url(url: str) -> str:
 
 
 def download_file(
-    url: str, output_path: Union[Path, str], file_name: str = None
+    url: str, output_path: Union[Path, str], file_name: Optional[str] = None
 ) -> Path:
     """
     Download a file.

@@ -7,7 +7,7 @@ from lazymyles import regexs
     "email", ("me@mylesbraithwaite.org", "me+lazy-myles@mylesbraithwaite.org")
 )
 def test_email_regex(email):
-    assert regexs.EMAIL_REGEX.match(email) is True
+    assert regexs.EMAIL_REGEX.match(email) is not None
 
 
 @pytest.mark.parametrize(
@@ -19,4 +19,4 @@ def test_email_regex(email):
     ),
 )
 def test_http_url_regex(http_url):
-    assert regexs.HTTP_URL_REGEX.match(http_url) is True
+    assert regexs.HTTP_URL_REGEX.match(http_url) is not None

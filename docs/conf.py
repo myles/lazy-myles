@@ -1,5 +1,5 @@
-from pathlib import Path
 import sys
+from pathlib import Path
 
 ROOT_PATH = Path(__file__).resolve().parent.parent
 
@@ -15,31 +15,31 @@ import lazymyles
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'lazy-myles'
-copyright = '2022, Myles Braithwaite'
-author = 'Myles Braithwaite'
+project = "lazy-myles"
+copyright = "2022, Myles Braithwaite"
+author = "Myles Braithwaite"
 release = lazymyles.__version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.napoleon',
-    'myst_parser',
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.napoleon",
+    "myst_parser",
 ]
 
 source_suffix = {
-    '.md': 'markdown',
-    '.rst': 'restructuredtext',
+    ".md": "markdown",
+    ".rst": "restructuredtext",
 }
 
-templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme = "alabaster"
+html_static_path = ["_static"]
