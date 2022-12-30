@@ -3,9 +3,11 @@ from pathlib import Path
 import pytest
 import responses
 
-from lazymyles.download_file import (download_file,
-                                     get_file_name_from_content_disposition,
-                                     get_file_name_from_url)
+from lazymyles.download_file import (
+    download_file,
+    get_file_name_from_content_disposition,
+    get_file_name_from_url,
+)
 
 
 @pytest.mark.parametrize(
