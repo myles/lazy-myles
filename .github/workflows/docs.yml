@@ -60,13 +60,11 @@ jobs:
 
       - id: install-dependencies
         name: Install dependencies 👨🏻‍💻
-        run: |
-          poetry install
+        run: make setup
 
       - id: build-documentation
         name: Build documentation
-        run: |
-          poetry run sphinx-build ./docs ./docs/_build
+        run: make build_docs
 
       - id: upload-documentation
         name: Upload artifact
