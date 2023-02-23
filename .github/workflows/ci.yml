@@ -59,6 +59,7 @@ jobs:
         run: |
           poetry run black --check .
           poetry run isort --check .
+          poetry run ruff --check .
 
       - id: run-typing
         name: Run mypy 🏷

@@ -1,11 +1,11 @@
 import sys
 from pathlib import Path
 
+import lazymyles
+
 ROOT_PATH = Path(__file__).resolve().parent.parent
 
 sys.path.insert(0, str(ROOT_PATH))
-
-import lazymyles
 
 # Configuration file for the Sphinx documentation builder.
 #
