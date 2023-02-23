@@ -45,23 +45,31 @@ jobs:
           restore-keys: ${{ runner.os }}-poetry-
 
       - id: install-dependencies
-        name: Install dependencies 👨🏻‍💻
-        run: |
-          poetry install
+        name: "Install dependencies 👨🏻‍💻"
+        run: make setup
+
+      - id: poetry-lock
+        name: "Run poetry lock 📌"
+        run: poetry lock --check
 
       - id: run-test
-        name: Run tests 🧪
-        run: |
-          poetry run pytest --cov=lazymyles
+        name: "Run tests 🧪"
+        run: make test
+
+      - id: upload-coverage-report
+        name: "Upload coverage reports to Codecov ↗️"
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - id: run-linters
-        name: Run linters 🚨
-        run: |
-          poetry run black --check .
-          poetry run isort --check .
-          poetry run ruff --check .
+        name: "Run linters 🚨"
+        run: make lint
 
       - id: run-typing
-        name: Run mypy 🏷
-        run: |
-          poetry run mypy .
+        name: "Run mypy 🏷"
+        run: make mypy
+
+      - id: run-security
+        name: "Run bandit 🔒"
+        run: make bandit
